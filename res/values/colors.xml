@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="indicator_color">#FFEEEEEE</color>
+    <color name="underline_color">#FFEEEEEE</color>
+    <color name="divider_color">#FFEEEEEE</color>
+    
+    <color name="primary">#457C50</color>
+    <color name="primaryDarker">#580C0C</color>
+    
+    <color name="lessonPrimary">#03A9F4</color>
+    <color name="lessonPrimaryDarker">#0277BD</color>
+	
+    <color name="alarmPrimary">#009688</color>
+    <color name="alarmPrimaryDarker">#00796B</color>
+</resources>
