@@ -153,6 +153,7 @@ int attr textColorSearchUrl 0x7f01003e
 int attr theme 0x7f010092
 int attr thickness 0x7f0100a0
 int attr thumbTextPadding 0x7f0100a3
+int attr tint 0x7f0100a9
 int attr title 0x7f010000
 int attr titleMarginBottom 0x7f010090
 int attr titleMarginEnd 0x7f01008e
@@ -342,7 +343,9 @@ int drawable abc_textfield_default_mtrl_alpha 0x7f02002f
 int drawable abc_textfield_search_activated_mtrl_alpha 0x7f020030
 int drawable abc_textfield_search_default_mtrl_alpha 0x7f020031
 int drawable abc_textfield_search_material 0x7f020032
-int drawable ic_launcher 0x7f020033
+int drawable ic_action_computer 0x7f020033
+int drawable ic_launcher 0x7f020034
+int drawable tint_selector 0x7f020035
 int id action_bar 0x7f050033
 int id action_bar_activity_content 0x7f05001a
 int id action_bar_container 0x7f050032
@@ -438,8 +441,9 @@ int layout abc_search_dropdown_item_icons_2line 0x7f030014
 int layout abc_search_view 0x7f030015
 int layout abc_simple_dropdown_hint 0x7f030016
 int layout activity_main 0x7f030017
-int layout main_toolbar 0x7f030018
-int layout support_simple_spinner_dropdown_item 0x7f030019
+int layout list_menu_item 0x7f030018
+int layout main_toolbar 0x7f030019
+int layout support_simple_spinner_dropdown_item 0x7f03001a
 int menu main 0x7f0c0000
 int string abc_action_bar_home_description 0x7f0a0001
 int string abc_action_bar_home_description_format 0x7f0a0004
@@ -933,6 +937,8 @@ int styleable Theme_windowFixedHeightMajor 7
 int styleable Theme_windowFixedHeightMinor 5
 int styleable Theme_windowFixedWidthMajor 4
 int styleable Theme_windowFixedWidthMinor 6
+int[] styleable TintableImageView { 0x7f0100a9 }
+int styleable TintableImageView_tint 0
 int[] styleable Toolbar { 0x010100af, 0x01010140, 0x7f010000, 0x7f010057, 0x7f010067, 0x7f010068, 0x7f010069, 0x7f01006a, 0x7f01006c, 0x7f01008a, 0x7f01008b, 0x7f01008c, 0x7f01008d, 0x7f01008e, 0x7f01008f, 0x7f010090, 0x7f010091, 0x7f010092, 0x7f010093, 0x7f010094, 0x7f010095, 0x7f010096 }
 int styleable Toolbar_android_gravity 0
 int styleable Toolbar_android_minHeight 1

@@ -1163,6 +1163,12 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int thumbTextPadding=0x7f0100a3;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+         */
+        public static final int tint=0x7f0100a9;
         /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -1637,7 +1643,9 @@ containing a value of this type.
         public static final int abc_textfield_search_activated_mtrl_alpha=0x7f020030;
         public static final int abc_textfield_search_default_mtrl_alpha=0x7f020031;
         public static final int abc_textfield_search_material=0x7f020032;
-        public static final int ic_launcher=0x7f020033;
+        public static final int ic_action_computer=0x7f020033;
+        public static final int ic_launcher=0x7f020034;
+        public static final int tint_selector=0x7f020035;
     }
     public static final class id {
         public static final int action_bar=0x7f050033;
@@ -1761,8 +1769,9 @@ containing a value of this type.
         public static final int abc_search_view=0x7f030015;
         public static final int abc_simple_dropdown_hint=0x7f030016;
         public static final int activity_main=0x7f030017;
-        public static final int main_toolbar=0x7f030018;
-        public static final int support_simple_spinner_dropdown_item=0x7f030019;
+        public static final int list_menu_item=0x7f030018;
+        public static final int main_toolbar=0x7f030019;
+        public static final int support_simple_spinner_dropdown_item=0x7f03001a;
     }
     public static final class menu {
         public static final int main=0x7f0c0000;
@@ -5711,6 +5720,31 @@ containing a value of this type.
           @attr name ucup.materiallesson:windowFixedWidthMinor
         */
         public static final int Theme_windowFixedWidthMinor = 6;
+        /** Attributes that can be used with a TintableImageView.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #TintableImageView_tint ucup.materiallesson:tint}</code></td><td></td></tr>
+           </table>
+           @see #TintableImageView_tint
+         */
+        public static final int[] TintableImageView = {
+            0x7f0100a9
+        };
+        /**
+          <p>This symbol is the offset where the {@link ucup.materiallesson.R.attr#tint}
+          attribute's value can be found in the {@link #TintableImageView} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+          @attr name ucup.materiallesson:tint
+        */
+        public static final int TintableImageView_tint = 0;
         /** Attributes that can be used with a Toolbar.
            <p>Includes the following attributes:</p>
            <table>
