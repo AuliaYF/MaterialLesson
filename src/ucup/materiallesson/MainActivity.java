@@ -4,10 +4,14 @@ import java.util.ArrayList;
 
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,12 +27,15 @@ public class MainActivity extends ActionBarActivity implements OnItemClickListen
 	private ListView mListView;
 	private ArrayList<ListMenuModel> mListMenu;
 	private ListMenuAdapter mListMenuAdapter;
+	private FragmentManager mFragmentManager;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
+		mFragmentManager = getSupportFragmentManager();
+		
 		mToolbar = (Toolbar) findViewById(R.id.my_awesome_toolbar);
 		setSupportActionBar(mToolbar);
 
@@ -55,10 +62,10 @@ public class MainActivity extends ActionBarActivity implements OnItemClickListen
 		mToolbar.setClickable(true);
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		getSupportActionBar().setHomeButtonEnabled(true);
-		
+
 		mListView = (ListView)findViewById(R.id.left_drawer);
 		mListView.setOnItemClickListener(this);
-		
+
 		mListMenu = new ArrayList<ListMenuModel>();
 		mListMenu.add(new ListMenuModel("List #1", "List #1", R.drawable.ic_action_computer));
 		mListMenu.add(new ListMenuModel("List #2", "List #2", R.drawable.ic_action_computer));
@@ -66,8 +73,41 @@ public class MainActivity extends ActionBarActivity implements OnItemClickListen
 		mListMenuAdapter = new ListMenuAdapter(getApplicationContext(),
 				mListMenu);
 		mListView.setAdapter(mListMenuAdapter);
+		
+		displayView(0);
 	}
-	
+
+	private void displayView(int position) {
+		Fragment fragment = null;
+		switch (position) {
+		case 0:
+			fragment = new MainFragment().newInstance(position);
+			break;
+		case 1:
+			fragment = new MainFragment().newInstance(position);
+			break;
+		case 2:
+			fragment = new MainFragment().newInstance(position);
+			break;
+		default:
+			break;
+		}
+
+		if (fragment != null) {
+			FragmentTransaction ft = mFragmentManager.beginTransaction();
+			ft.replace(R.id.content_frame, fragment);
+			ft.commit();
+
+			getSupportActionBar().setTitle(mListMenu.get(position).getDesc());
+			mListView.setItemChecked(position, true);
+			mListView.setSelection(position);
+
+			mDrawerLayout.closeDrawer(mListView);
+		} else {
+			Log.e("MainActivity", "Error in creating fragment");
+		}
+	}
+
 	@Override
 	protected void onPostCreate(Bundle savedInstanceState) {
 		super.onPostCreate(savedInstanceState);
@@ -92,7 +132,7 @@ public class MainActivity extends ActionBarActivity implements OnItemClickListen
 		super.onConfigurationChanged(newConfig);
 		mDrawerToggle.onConfigurationChanged(newConfig);
 	}
-	
+
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
@@ -102,10 +142,7 @@ public class MainActivity extends ActionBarActivity implements OnItemClickListen
 
 	@Override
 	public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-		mListView.setItemChecked(arg2, true);
-		mListView.setSelection(arg2);
-		
-		mDrawerLayout.closeDrawer(mListView);
+		displayView(arg2);
 	}
 
 }

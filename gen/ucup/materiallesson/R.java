@@ -1769,9 +1769,10 @@ containing a value of this type.
         public static final int abc_search_view=0x7f030015;
         public static final int abc_simple_dropdown_hint=0x7f030016;
         public static final int activity_main=0x7f030017;
-        public static final int list_menu_item=0x7f030018;
-        public static final int main_toolbar=0x7f030019;
-        public static final int support_simple_spinner_dropdown_item=0x7f03001a;
+        public static final int fragment_view=0x7f030018;
+        public static final int list_menu_item=0x7f030019;
+        public static final int main_toolbar=0x7f03001a;
+        public static final int support_simple_spinner_dropdown_item=0x7f03001b;
     }
     public static final class menu {
         public static final int main=0x7f0c0000;
